@@ -12,13 +12,7 @@ let countChangePermutations = (target) => {
         } else {
             for (let option of node[1]) {
                 if (node[0] + option <= target) {
-                    let next = [node[0] + option, node[1].reduce((arr, ele) => {
-                        if (ele >= option) {
-                            arr.push(ele)
-                        }
-
-                        return arr
-                    }, [])]
+                    let next = [node[0] + option, node[1].filter(c => c >= option)]
                     dfsQueue.push(next)
                 }
             }
