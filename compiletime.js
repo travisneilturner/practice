@@ -48,7 +48,7 @@ const compileTime = (files) => {
                 max < finishTimes[el] ? finishTimes[el] : max
             ) : 0
         }, 0)
-        finish = start + times[node]
+        let finish = start + times[node]
         if (finish > maxTime) {
             maxTime = finish
         }
